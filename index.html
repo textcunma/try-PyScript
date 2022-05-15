@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>PyScriptお試し</title>
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css">
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+        <py-env>
+            - matplotlib
+            - numpy
+        </py-env>
+    </head>
+    <body>
+        <div id="plot"></div>
+        <py-script>
+            import matplotlib.pyplot as plt
+            import math
+            import numpy as np
+            pi=math.pi
+            x=np.linspace(0,2*pi,100)
+            y=np.sin(x)
+            fig,ax=plt.subplots()
+            plt.plot(x,y)
+            pyscript.write('plot',fig)
+        </py-script>
+
+    </body>
+</html>
